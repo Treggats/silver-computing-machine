@@ -16,3 +16,5 @@ environments:
             - 'php artisan event:cache'
             - yarn
             - yarn build
+        deploy:
+          - php artisan migrate --force
