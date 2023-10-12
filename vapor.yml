@@ -9,6 +9,7 @@ environments:
         memory: 1024
         cli-memory: 512
         runtime: 'php-8.2:al2'
+        cache: random-cache
         build:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
             - 'php artisan event:cache'
