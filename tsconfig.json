@@ -1,0 +1,51 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "experimentalDecorators": true,
+        "declaration": false,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "noImplicitAny": false,
+        "ignoreDeprecations": "5.0",
+        /*
+         * disabling because of laravel echo issue
+         * "util/event-formatter.ts: "Property 'namespace' has no initializer and is not definitely assigned in the constructor"
+         */
+        "strictPropertyInitialization": false,
+        /*
+         * TODO importsNotUsedAsValues is deprecated and requires "ignoreDeprecations": "5.0",
+         * We can drop "ignoreDeprecations": "5.0" by switching to "verbatimModuleSyntax",
+         * But this requires some significant code/config changes.
+         *
+         * Enforce using `import type` instead of `import` for types
+         */
+        "importsNotUsedAsValues": "error",
+        "verbatimModuleSyntax": false,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "sourceMap": false,
+        // this aligns with Vue's browser support
+        "target": "es6",
+
+        /* Strictness */
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+
+        // TODO switch to "moduleResolution": "bundler" when we've switched to verbatimModuleSyntax
+        "moduleResolution": "node",
+        "module": "ESNext",
+
+        "jsx": "preserve",
+        "lib": [
+            "ESNext",
+            "dom"
+        ],
+        "baseUrl": ".",
+    },
+    "include": [
+        "resources/js/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+    ]
+}
